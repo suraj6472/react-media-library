@@ -1,73 +1,21 @@
-import "./App.css";
+import { Link } from "react-router-dom";
 
-export default function App() {
+export default function App({children}) {
   return (
     <>
       <header className="bg-blue-500 py-4">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 flex justify-between items-center">
           <h1 className="text-2xl font-semibold text-white">Media Library</h1>
+          <nav className="space-x-4">
+            <Link to={'/'} className="text-white hover:bg-blue-600 p-2">Home</Link>
+            <Link to={'/all-folders'} className="text-white hover:bg-blue-600 p-2">All Folder</Link>
+            <button className="text-white hover:bg-blue-600 p-2">Add Folder</button>
+            <button className="text-white hover:bg-blue-600 p-2">Add File</button>
+          </nav>
         </div>
       </header>
 
-      <div className="container mx-auto px-4 mt-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <img
-              src="https://via.placeholder.com/300"
-              alt="Placeholder"
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold">Media Title</h2>
-              <p className="text-gray-600">
-                Description of the media item goes here.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <img
-              src="https://via.placeholder.com/300"
-              alt="Placeholder"
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold">Media Title</h2>
-              <p className="text-gray-600">
-                Description of the media item goes here.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <img
-              src="https://via.placeholder.com/300"
-              alt="Placeholder"
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold">Media Title</h2>
-              <p className="text-gray-600">
-                Description of the media item goes here.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <img
-              src="https://via.placeholder.com/300"
-              alt="Placeholder"
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold">Media Title</h2>
-              <p className="text-gray-600">
-                Description of the media item goes here.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      {children}
     </>
   );
 }
