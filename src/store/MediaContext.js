@@ -1,20 +1,15 @@
 import MediaContext from "./media-context";
-import { files, folders } from "./data";
 
 export default function MediaContextProvider({ children }) {
-
-  const getAllMediaFiles = () => {
-    return files;
-  }
 
   const mediaContext = {
     media: [],
     isShowingProgressBar: false,
+    activeFolderId: null,
     uploadMedia: () => {},
     deleteMedia: () => {},
     addDirectory: () => {},
     deleteDirectory: () => {},
-    getMedia: getAllMediaFiles,
   };
 
   return (
